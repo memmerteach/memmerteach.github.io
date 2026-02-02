@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Light Camera Teach | M.E. MacDonald"
+  description="Monthly science and math lessons from the road. Travel-rooted education and videos from a new country each month."
+>
+  <section class="hero container">
+    <div class="hero-card" data-animate>
+      <div class="hero-card-content">
+        <p class="hero-subtitle">Travel-Rooted Education</p>
+        <h1>Lessons built on curiosity, filmed across the world.</h1>
+        <p class="hero-summary">
+          Light Camera Teach is a traveling classroom led by M.E. MacDonald.
+          Each month brings a new country, a new set of science and math lessons,
+          and short videos that turn place into curriculum.
+        </p>
+        <div class="cta-row">
+          <a class="button" href="#lessons">Explore monthly lessons</a>
+          <a class="button secondary" href="/about/">Meet M.E.</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" data-animate style="--delay: 0.15s;">
+      <h3>Next stop: a fresh classroom</h3>
+      <p>
+        Monthly themes, lesson packets, and short films inspired by wherever the road
+        leads next.
+      </p>
+      <div class="badge">New country each month</div>
+    </div>
+  </section>
+
+  <section class="section container" data-animate style="--delay: 0.2s;">
+    <div class="section-header">
+      <span class="kicker">Mission</span>
+      <h2>From studio teaching in Los Angeles to a global learning hub.</h2>
+      <p class="hero-summary">
+        Light Camera Teach is shifting from a local studio model into a travel-centered
+        education platform. The goal: build joyful, standards-aligned lessons that
+        connect students to real places and real questions.
+      </p>
+    </div>
+  </section>
+
+  <section id="lessons" class="section container" data-animate style="--delay: 0.3s;">
+    <div class="section-header">
+      <span class="kicker">Monthly Lessons</span>
+      <h2>Science and math, reimagined through place.</h2>
+    </div>
+    <div class="grid three">
+      <div class="card lesson-card">
+        <h3>Lesson Packets</h3>
+        <span>Printable worksheets + teacher notes</span>
+        <p>
+          Each month includes ready-to-use lessons that tie math and science concepts
+          to the geography, culture, and environment of the featured country.
+        </p>
+      </div>
+      <div class="card lesson-card">
+        <h3>Short Videos</h3>
+        <span>On-location filming</span>
+        <p>
+          Bite-sized videos from the field to make the lessons tangible and inspire
+          student curiosity.
+        </p>
+      </div>
+      <div class="card lesson-card">
+        <h3>Classroom Challenges</h3>
+        <span>Project-based prompts</span>
+        <p>
+          Student challenges that connect learning outcomes to real-world travel
+          stories and observations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" data-animate style="--delay: 0.35s;">
+    <div class="section-header">
+      <span class="kicker">Travel Log</span>
+      <h2>Lessons anchored in place.</h2>
+    </div>
+    <div class="grid two">
+      <div class="country-card">
+        <strong>Pacific Northwest</strong>
+        <p>Coastal ecosystems, rainfall patterns, and measurement in the wild.</p>
+      </div>
+      <div class="country-card">
+        <strong>Cebu</strong>
+        <p>Marine biodiversity, geometry in architecture, and climate data.</p>
+      </div>
+      <div class="country-card">
+        <strong>Kazakhstan</strong>
+        <p>Grassland science, energy systems, and scaling math models.</p>
+      </div>
+      <div class="country-card">
+        <strong>Georgia</strong>
+        <p>Food chemistry, mountain geology, and the math of trade routes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" data-animate style="--delay: 0.4s;">
+    <div class="section-header">
+      <span class="kicker">Credentials</span>
+      <h2>Certified and classroom-ready.</h2>
+    </div>
+    <div class="card">
+      <div class="certifications">
+        <div>Certificate # STC160331</div>
+        <div>Additional certifications: <!-- TODO: Add when available --></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container" data-animate style="--delay: 0.45s;">
+    <div class="section-header">
+      <span class="kicker">Contact</span>
+      <h2>Reach out for collaborations or classroom partnerships.</h2>
+    </div>
+    <div class="grid two">
+      <div class="card contact-card">
+        <p>
+          Email is the fastest way to connect.
+        </p>
+        <p>
+          <a href="mailto:marcia@lightscamerateach.com">marcia@lightscamerateach.com</a>
+        </p>
+        <p class="note">
+          Backend requirement: form submissions should POST to a secure endpoint
+          (serverless or hosted) with spam protection and email notifications.
+        </p>
+      </div>
+      <div class="card contact-card">
+        <form class="form-grid" aria-label="Contact form">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="email" name="email" placeholder="Email" />
+          <textarea name="message" rows="4" placeholder="Message"></textarea>
+          <button class="button" type="button">Send message (coming soon)</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
