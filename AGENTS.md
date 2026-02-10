@@ -40,3 +40,13 @@ Set up git hooks (once per clone): `./scripts/setup-githooks.sh`
 ## Instruction Sources
 - Copilot instructions should reference this file.
 - Keep `.github/copilot-instructions.md` in sync with this file.
+
+## Naming Notes
+- Classroom/brand name is "Lights Camera Teach" (plural).
+- If you see "Light Camera Teach" in copy, treat it as legacy wording to update.
+
+## Content Map (Current)
+- Home page: `src/pages/index.astro`
+- About page: `src/pages/about/index.astro`
+- Shared layout + nav: `src/layouts/BaseLayout.astro`
+- Stylesheet: `public/assets/styles.css`

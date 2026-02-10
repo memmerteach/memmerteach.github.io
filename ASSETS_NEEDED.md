@@ -1,9 +1,9 @@
-# Assets Needed for Light Camera Teach
+# Assets Needed for Lights Camera Teach
 
 This list captures assets to generate or supply (e.g., via ChatGPT images or photography).
 
 ## Brand
-- Primary logo (Light Camera Teach wordmark)
+- Primary logo (Lights Camera Teach wordmark)
 - Secondary logo mark (simple icon: camera + book or compass + pencil)
 - Favicon set (ICO + PNG sizes)
 
