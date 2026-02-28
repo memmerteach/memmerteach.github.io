@@ -149,11 +149,22 @@ header.site-header {
 .brand {
   display: grid;
   gap: 0.2rem;
+  justify-items: start;
   color: var(--ink);
 }
 
 .brand:hover {
   color: var(--accent);
+}
+
+.brand-logo {
+  width: clamp(10rem, 18vw, 13rem);
+  height: auto;
+  object-fit: contain;
+  background: #fff8e8;
+  border-radius: 12px;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(30, 42, 56, 0.12);
 }
 
 .brand-title {
@@ -447,5 +458,9 @@ footer {
 
   .hero {
     padding: var(--space-lg) 0 var(--space-xl);
+  }
+
+  .brand-logo {
+    width: clamp(8.5rem, 45vw, 11rem);
   }
 }
