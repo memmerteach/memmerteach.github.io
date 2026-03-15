@@ -1,6 +1,9 @@
 ---
 import { buildSeo } from "../utils/seo";
 
+/** Twitter/X @handle (with @). Leave empty to suppress twitter:site / twitter:creator tags. */
+const TWITTER_HANDLE = "";
+
 const {
   title,
   description,
@@ -38,6 +41,8 @@ const seo = buildSeo({
     {seo.socialImageUrl && <meta property="og:image" content={seo.socialImageUrl} />}
     {seo.socialImageAlt && <meta property="og:image:alt" content={seo.socialImageAlt} />}
     <meta name="twitter:card" content={seo.twitterCard} />
+    {TWITTER_HANDLE && <meta name="twitter:site" content={TWITTER_HANDLE} />}
+    {TWITTER_HANDLE && <meta name="twitter:creator" content={TWITTER_HANDLE} />}
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {seo.socialImageUrl && <meta name="twitter:image" content={seo.socialImageUrl} />}
