@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, isPublished, sortByDateDesc } from "../../utils/content";
+
+const posts = (await getCollection("posts", isPublished)).sort(sortByDateDesc);
+---
+
+<BaseLayout
+  title="Posts | Lights Camera Teach"
+  description="Travel-rooted posts and updates from Lights Camera Teach."
+  currentPath="/posts/"
+>
+  <section class="section container" data-animate>
+    <div class="section-header">
+      <span class="kicker">Posts</span>
+      <h1>Notes from the traveling classroom.</h1>
+      <p class="hero-summary">
+        Field notes, project updates, and place-based reflections will live here.
+      </p>
+    </div>
+
+    {posts.length > 0 ? (
+      <div class="grid two">
+        {posts.map((post) => (
+          <a class="card lesson-card" href={`/posts/${post.slug}/`}>
+            <span>{formatDate(post.data.date)}</span>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.summary}</p>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="card lesson-card">
+        <span>Coming soon</span>
+        <h2>No published posts yet</h2>
+        <p>The markdown-based post system is in place. New entries will appear here when they are published.</p>
+      </div>
+    )}
+  </section>
+</BaseLayout>

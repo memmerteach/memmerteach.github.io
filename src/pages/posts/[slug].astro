@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, isPublished } from "../../utils/content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", isPublished);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const description = post.data.description ?? post.data.summary;
+---
+
+<BaseLayout
+  title={`${post.data.title} | Lights Camera Teach`}
+  description={description}
+  currentPath={`/posts/${post.slug}/`}
+  socialImage={post.data.socialImage}
+  socialImageAlt={post.data.socialImageAlt ?? post.data.title}
+  ogType="article"
+  publishedTime={post.data.date.toISOString()}
+>
+  <section class="section container" data-animate>
+    <article class="card" style="max-width: 760px; margin: 0 auto;">
+      <header class="section-header" style="text-align: left;">
+        <span class="kicker">{formatDate(post.data.date)}</span>
+        <h1>{post.data.title}</h1>
+        <p class="hero-summary">{description}</p>
+      </header>
+
+      <Content />
+
+      <p style="margin-top: 2rem;">
+        <a href="/posts/">Back to posts</a>
+      </p>
+    </article>
+  </section>
+</BaseLayout>
