@@ -8,8 +8,14 @@ const posts = defineCollection({
     publishAt: z.coerce.date().optional(),
     summary: z.string(),
     description: z.string().optional(),
-    socialImage: z.string().optional(),
-    socialImageAlt: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    author: z.string().optional(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+      credit: z.string().optional(),
+      creditUrl: z.string().optional(),
+    }).optional(),
     published: z.boolean().optional(),
   }),
 });

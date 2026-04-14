@@ -21,8 +21,8 @@ const description = post.data.description ?? post.data.summary;
   title={`${post.data.title} | Lights Camera Teach`}
   description={description}
   currentPath={`/posts/${post.slug}/`}
-  socialImage={post.data.socialImage}
-  socialImageAlt={post.data.socialImageAlt ?? post.data.title}
+  socialImage={post.data.image?.src}
+  socialImageAlt={post.data.image?.alt ?? post.data.title}
   ogType="article"
   publishedTime={post.data.date.toISOString()}
 >
