@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../utils/url";
 ---
 
 <BaseLayout
@@ -18,7 +19,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
         <div class="cta-row">
           <a class="button" href="#lessons">Explore monthly lessons</a>
-          <a class="button secondary" href="/about/">Meet M.E.</a>
+          <a class="button secondary" href={withBase("/about/")}>Meet M.E.</a>
         </div>
       </div>
     </div>

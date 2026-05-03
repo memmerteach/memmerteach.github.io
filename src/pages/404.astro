@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../utils/url";
 ---
 
 <BaseLayout
@@ -10,8 +11,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="error-shell">
       <span class="error-kicker">404</span>
 
-      <a class="error-logo" href="/">
-        <img src="/assets/lights-camera-teach-logo-transparent.png" alt="Lights Camera Teach" />
+      <a class="error-logo" href={withBase("/")}>
+        <img src={withBase("/assets/lights-camera-teach-logo-transparent.png")} alt="Lights Camera Teach" />
       </a>
 
       <h1 class="error-title">Sorry, that page is missing.</h1>
@@ -20,9 +21,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
 
       <div class="error-actions">
-        <a class="button" href="/">Go home</a>
-        <a class="button secondary" href="/posts/">Read posts</a>
-        <a class="button secondary" href="/about/">About</a>
+        <a class="button" href={withBase("/")}>Go home</a>
+        <a class="button secondary" href={withBase("/posts/")}>Read posts</a>
+        <a class="button secondary" href={withBase("/about/")}>About</a>
       </div>
 
       <div class="error-help">

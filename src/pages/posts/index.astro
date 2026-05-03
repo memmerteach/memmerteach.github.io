@@ -1,9 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatDate, isPublished, sortByDateDesc } from "../../utils/content";
+import { formatDate, isPublishedOrDraftInDev, sortByDateDesc } from "../../utils/content";
+import { withBase } from "../../utils/url";
 
-const posts = (await getCollection("posts", isPublished)).sort(sortByDateDesc);
+const posts = (await getCollection("posts", isPublishedOrDraftInDev)).sort(sortByDateDesc);
 ---
 
 <BaseLayout
@@ -23,7 +24,7 @@ const posts = (await getCollection("posts", isPublished)).sort(sortByDateDesc);
     {posts.length > 0 ? (
       <div class="grid two">
         {posts.map((post) => (
-          <a class="card lesson-card" href={`/posts/${post.slug}/`}>
+          <a class="card lesson-card" href={withBase(`/posts/${post.slug}/`)}>
             <span>{formatDate(post.data.date)}</span>
             <h2>{post.data.title}</h2>
             <p>{post.data.summary}</p>

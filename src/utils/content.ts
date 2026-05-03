@@ -22,6 +22,14 @@ export function isPublished<T extends EntryWithVisibility>(entry: T) {
   return getPublishDate(entry).getTime() <= Date.now();
 }
 
+export function isPublishedOrDraftInDev<T extends EntryWithVisibility>(entry: T) {
+  if (import.meta.env.DEV) {
+    return true;
+  }
+
+  return isPublished(entry);
+}
+
 export function sortByDateDesc<T extends { data: { date: Date } }>(a: T, b: T) {
   return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 }

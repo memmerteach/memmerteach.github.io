@@ -1,10 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatDate, isPublished } from "../../utils/content";
+import { formatDate, isPublishedOrDraftInDev } from "../../utils/content";
+import { withBase } from "../../utils/url";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts", isPublished);
+  const posts = await getCollection("posts", isPublishedOrDraftInDev);
 
   return posts.map((post) => ({
     params: { slug: post.slug },
@@ -37,7 +38,7 @@ const description = post.data.description ?? post.data.summary;
       <Content />
 
       <p style="margin-top: 2rem;">
-        <a href="/posts/">Back to posts</a>
+        <a href={withBase("/posts/")}>Back to posts</a>
       </p>
     </article>
   </section>
